@@ -1,18 +1,40 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeComponent from '../components/HomeComponent.vue' // Import Home component
-import AddComponent from '../components/AddComponent.vue' // Import AddComponent
+import LandingPage from '../components/LandingPage.vue'
+import ViewProduct from '../components/ViewProduct.vue'
+import AddProduct from '../components/AddProduct.vue'
+import EditProduct from '../components/EditProduct.vue'
+import DeleteProduct from '../components/DeleteProduct.vue'
 
 const routes = [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeComponent // Correctly reference HomeComponent
-    },
-    {
-      path: '/addproduct',
-      name: 'addproduct',
-      component: AddComponent // Correctly reference AddComponent
-    }
+  {
+    path: '/',
+    name: 'LandingPage',
+    component: LandingPage
+  },
+
+  {
+    path: '/viewproduct',
+    name: 'ViewProduct',
+    component: ViewProduct
+  },
+
+  {
+    path: '/addproduct',
+    name: 'AddProduct',
+    component: AddProduct
+  },
+  {
+    path: '/editproduct/:id',
+    name: 'EditProduct',
+    component: EditProduct,
+    props: true
+  },
+  {
+    path: '/deleteproduct/:id',
+    name: 'DeleteProduct',
+    component: DeleteProduct,
+    props: true
+  }
 ];
 
 const router = createRouter({
